@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "langsmith-evaluator"
+version = "0.1.0"
+description = "LangSmithデータセットの評価ツール"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+    "langsmith>=0.0.69",
+    "python-dotenv>=1.0.0",
+    "pandas>=2.0.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "langchain>=0.0.267",
+    "langchain-community>=0.0.1",
+    "openai>=0.27.0",
+    "langchain-openai>=0.3.7",
+    "pydantic>=2.10.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "isort>=5.0.0",
+    "pandas-stubs",
+    "types-seaborn",
+    "mypy-extensions>=1.0.0",
+]
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.poetry.dependencies]
+python = "^3.10" 
